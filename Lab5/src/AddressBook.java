@@ -9,6 +9,14 @@ public class AddressBook {
 		buddies = new DefaultListModel<BuddyInfo>();
 	}
 	
+	public int size() {
+		return buddies.size();
+	}
+	
+	public void clear() {
+		buddies = new DefaultListModel<BuddyInfo>();
+	}
+	
 	public void addBuddy(BuddyInfo newBuddy) {
 		buddies.addElement(newBuddy);
 	}

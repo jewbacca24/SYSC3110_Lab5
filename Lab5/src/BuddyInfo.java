@@ -11,6 +11,12 @@ public class BuddyInfo {
 		this.number = number;
 	}
 	
+	public BuddyInfo(BuddyInfo buddyClone) {
+		this.name = buddyClone.name;
+		this.age = buddyClone.age;
+		this.number = buddyClone.number;
+	}
+	
 	public BuddyInfo() {}
 
 	public String getName() {
@@ -28,6 +34,10 @@ public class BuddyInfo {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	public boolean isOver18() {
+		return (age >= 18);
+	}
 
 	public String getPhoneNumber() {
 		return number;
@@ -39,6 +49,18 @@ public class BuddyInfo {
 	
 	public String toString() {
 		return "Name: " + name + "\n Age: " + age + "\n Phone Number: " + number + "\n";
+	}
+	
+	public String getGreeting() {
+		return "Hello " + name + "!";
+	}
+	
+	public boolean equals(Object obj) {
+		if (null == obj) return false;
+		if ( !(obj instanceof BuddyInfo) ) return false;
+		
+		BuddyInfo buddy = (BuddyInfo) obj;
+		return this.name.equals(buddy.name) && (this.age == buddy.age) && this.number.equals(buddy.number); 
 	}
 	
 	public static void main(String[] args) {
